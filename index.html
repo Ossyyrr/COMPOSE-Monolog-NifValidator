@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- Action a un fichero php, nombre: admin. contraseña: 1234. si no sale identificacion invalida
+usar monolog:    https://packagist.org/packages/monolog/monolog
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+// create a log channel
+$log = new Logger('name');
+$log->pushHandler(new StreamHandler('path/to/your.log', Logger::WARNING));
+
+// add records to the log
+$log->warning('Foo');
+$log->error('Se ha intentado acceder con unas credenciales incorrectas');
+-->
+<main>
+    <h1>COMPOSER</h1>
+    <img src="composer.svg" alt="Logo Composer">
+    <p>Utilizo composer para manejar dependencias.</p>
+    <p>De la página <a href="packagist.org">packagist.org</a> instalo los paquetes que utilizo:</p>
+    <p class="neg">monolog/monolog: </p>  <p>  Envía registros a archivos, tomas, bandejas de entrada, bases de datos y diversos servicios web.</p>
+    <p class="neg"> ulabox/nif-validator: </p> <p> validador español de NIF</p>
+    <h2>Validador:</h2>
+    
+<form action="index.php" method="POST">
+    <input type="text" name="Nombre" id="" placeholder="Usuario (Admin)">
+    <input type="text" name="Contra" id="" placeholder="Contraseña (1234)">
+    <input type="text" name="dni" placeholder="DNI Válido">
+    <input type="submit" name="Enviar" id="">
+</form>
+<section>
+    <h3 class="cor">
+        <?php 
+        echo $dniCorrecto;
+        echo $datosCorrectos;
+        ?>
+    </h3>
+    <h3 class="inc">
+        <?php 
+        echo $datosIncorrectos;
+        echo $dniIncorrecto;
+        ?>
+    </h3>
+</section>
+</main>
+<style>
+    body{
+        display:flex;
+        width: 98vw;
+        height: 98vh;
+        justify-content: center;
+        text-align: center;
+    }
+    img{
+        width: 80px;
+    }
+    h2{
+        margin-top: 50px;
+    }
+    .neg{
+        font-weight: bold;
+    }
+    h3.cor{
+        color:rgb(92, 219, 18);
+    } 
+    h3.inc{
+        color:rgb(226, 43, 43);
+    }
+</style>
+</body>
+</html>

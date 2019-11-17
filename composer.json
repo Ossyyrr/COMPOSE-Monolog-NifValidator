@@ -1,0 +1,7 @@
+{
+    "name": "root/html",
+    "require": {
+        "monolog/monolog": "^2.0",
+        "ulabox/nif-validator": "^1.2"
+    }
+}
